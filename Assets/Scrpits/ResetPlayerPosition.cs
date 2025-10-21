@@ -1,18 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResetPlayerPosition : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject player;
+    public Transform respawnPoint; 
 
-    void Start()
+    public void OnTriggerEnter(Collider other)
     {
-        //set player position back to start position
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

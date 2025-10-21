@@ -3,17 +3,18 @@ using UnityEngine;
 
 public class SpawnSomething : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject something;
 
-    void Start()
+    public GameObject something;
+    public AudioSource audioSource;
+
+    private void Start()
     {
-        
+        something.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        something.gameObject.SetActive(true);
+        audioSource.Play();
     }
 }
