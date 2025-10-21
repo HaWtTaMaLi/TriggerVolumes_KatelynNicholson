@@ -3,6 +3,8 @@ using UnityEngine;
 public class ResetPlayerPosition : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject player;
+
     void Start()
     {
         //set player position back to start position
